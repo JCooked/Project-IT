@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wii Characters and Round Table</title>
+    <style type="text/css">
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="color: rgb(154, 144, 144);">
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="playerInfo">
+                <p>Player information goes here...</p>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;" class="container">
+        <img src="imagemap/mainimage.png" usemap="#image-map">
+        <map name="image-map">
+            <area target="" alt="Player 1" title="Person 1" href="" coords="529,355,549,354,556,368,553,382,547,393,541,403,545,411,551,420,560,441,553,455,553,469,553,486,566,506,566,521,556,511,549,520,544,540,535,568,524,510,510,491,495,454,502,415,526,403,522,390,513,367" shape="poly" onclick="openModal('Player 1', event)">
+            <area target="" alt="Player 2" title="Person 2" href="" coords="566,277,592,277,604,295,597,316,592,333,601,342,605,375,564,381,558,362,558,344,572,337,569,324,558,320,553,296" shape="poly" onclick="openModal('Player 2', event)">
+            <area target="" alt="Player 3" title="Person 3" href="" coords="709,250,735,247,747,266,744,288,734,307,748,314,748,345,693,356,697,320,716,306,702,292,699,269" shape="poly" onclick="openModal('Player 3', event)">
+            <area target="" alt="Player 4" title="Person 4" href="" coords="863,328,886,324,897,341,880,359,890,372,898,420,889,452,872,458,861,445,857,403,865,373,870,358,858,346" shape="poly" onclick="openModal('Player 4', event)">
+            <area target="" alt="Player 5" title="Person 5" href="" coords="911,365,942,362,954,380,932,405,947,423,954,484,936,513,930,504,909,498,909,442,922,416,911,405,906,391" shape="poly" onclick="openModal('Player 5', event)">
+            <area target="" alt="Player 6" title="Person 6" href="" coords="593,436,613,411,637,409,641,438,633,453,633,467,642,491,638,509,635,523,619,526,650,566,648,583,614,572,595,547,585,514,595,472,615,458" shape="poly" onclick="openModal('Player 6', event)">
+        </map>
+    </div>
+    <script>
+        function openModal(playerName, event) {
+            event.preventDefault(); // Prevent default behavior of the link
+            document.getElementById("playerModal").style.display = "block";
+            var playerContent = "";
+
+            // Set different content for each player
+            switch (playerName) {
+                case 'Player 1':
+                    playerContent = "<p>I learned about Windows, Troubleshooting, Tools to help solve problems and Bios</p> <p>Troubleshooting: when you are having a problem with your pc or laptop. Now you have to troubleshoot what's causing the problem. There's a list of things or tools you can use to help find out what's wrong. starting with the error code( what's the error code you might say? Well each problem that might occur with your pc has a code to let you know that's the problem.</p><p>Tools to help solve problems are The task manager, SFC(system file checker) can run this to check for damage files, BIOS/Uefi: -can run hardware test some can even usb drives and networks -check temperature and current status of pc</p><p></p><p>Bios (a chip stands for Basic Input Output System) is in all computers built into the motherboard and doesn't need any operating system (independent). First phase of a computer's execution when turning on one of the main things is to run (POST), post is Power On Self Test, is the initial set of diagnostic tests performed by the computer right after it's powered on, with the intent to check for any hardware related issues.</p><p>- the system configuration, can give you more details about boot log when you start up your computer</p><p>- look at the event viewer for mainly everything like applications, security, operating systems, and other logs as well - you can use command prompts ( but as a last resort!! You have to know what your doing or youll damage your computer)</p>";
+                    break;
+                case 'Player 2':
+                    playerContent = "<p>I learned Security and Protection Mechanisms of Computer Operating System which includes Computer Operating Systems, Security Threats and Malicious Tools/threats</p><p>What is Computer Operating System - I will define a Computer Operating Systems as a system software that we can see but cannot touch or feel, like the computer hardware. The operating system basically manages all the resources of the computer, and acts as an interface between the software and the computer hardware. It also interprets commands from user to hardware, controls and monitors the execution of all other programs that reside in the computer. - application programs/Operating systems examples, (windows 2000, Windows XP, Windows Vista, Windows 7, Windows 8, 10, and windows 11 to name a few), Linux, MacOS, ChromeOS </p>Definition of Computer Operating Systems Security <br> - Computer Operating System Security basically is the protection of computer systems and information from harm such as theft, threats, viruses, worms, malware, hacker and unauthorized use. <p> Security Threats <br>- A security threat is something that is potentially violating someone’s computer system. This can mean someone hacking into a computer and getting someone's information. This makes people vulnerable to identity theft and losing their valuable and private information. </p><p> Malicious Tools/threats - Software threats are called malware. <br>- Some are Click Bait - Click bait is a text or pop up that attracts the attention of the users. It can be dangerous because people are vulnerable to getting hacked or giving their information to the wrong person. To avoid click bait you should not click on random pop ups or websites that come on your screen. You can also get a security or virus scan on your computer in order to stop click bait from popping up.<br>- Back Doors- This is a way in which someone gains access to a computer, bypassing authentication security. Example people can hack an installed application software in your computer and then use it as a back door tool to penetrate into your system. <br>- Trojan Horse- A Trojan horse installs and activates on a computer by appearing to be something harmless which computer users unknowingly install in their system. - Computer Hardware Theft- This is the process of stealing your computer itself, for example a Laptop which is portable and easy to carry, or a component like the Hard Drive that has the computer data.  </p>";
+                    break;
+                case 'Player 3':
+                    playerContent = "<p>I learned File system and storage Management.</p><p>Basically how an operating system manages the files is by reserving one or more areas of the disk. When it does this it keeps a record of where the file data is stored on the disk. Like storage management it User properties can’t be accessed unless you get permission by changing the Administrator in system files. <br>● File system is a storage structure on the computer that organizes the data it allows users quick access to. On windows there are three different file systems NTFS, Fat32, fat16. <br>- NTFS: meaning New technology file system it proprietary journaling file system Starting with Windows NT 3.1, it is the default file system of the Windows NT family. It superseded File Allocation Table as the preferred file system on Windows and is supported in Linux and BSD. <br>- Fat32: a disk format or filing system used to organize the files stored on a disk drive <br>- Fat16: meaning File allocation table was used back in 1970 built for 16 byte file systems and was developed to run on Floppy disk. </p><p> ● Storage management: is the way organizations deliver fast access to data while ensuring data integrity, policy and regulatory compliance, and efficient storage resource use. It involves developing a plan to provision, configure, back up, and monitor data storage infrastructure to maintain performance, prevent data loss, and quickly address problems. <br>● There are many more systems and files in place like FTP, NFS, NAS, and SAN etc that help manage storage on our computer. <br>-FTP(File transfer protocol) secure file transfer that use shell encryption for high level security to send file transfers. <br>-NFS(Network file system) for storing files on a network <br>-NAS(Network attached storage) file dedicated storage device that contains data for employees to collaborate over a network.</p>";
+                    break;
+                case 'Player 4':
+                    playerContent = "<p>I learned about Hardware, Central Processing Unit (CPU), RAM, ROM, Motherboard and GPU</p> <p><br>Hardware <br>● Hardware is a broad term that refers to all the physical parts of a computer. The internal hardware devices that make up the computer and ensure that it is functional are called components, while external hardware devices that are not essential to a computer's functions are called peripherals.Hardware interfaces with software through several critical components and concepts that facilitate the execution of computing tasks. <br>● Central Processing Unit (CPU): -The CPU is the primary component responsible for executing instructions and performing calculations. - It interacts with software by fetching instructions from memory, decoding them, and executing them. <br>● Memory (RAM): -Memory stores data and instructions that the CPU accesses during program execution. - Software interacts with memory to store and retrieve data and instructions needed for computation. <br>● ROM: -Hardware interfaces with ROM (Read-Only Memory primarily during the boot process and for accessing essential firmware or software routines stored in ROM. <br>● MotherBoard : -The motherboard is the central hub connecting various hardware components within a computer system. It provides the necessary interfaces and pathways for these components to communicate and work together to perform computing tasks. Here's how hardware interfaces with the motherboard to perform computing tasks: <br>● GPU: -The Graphics Processing Unit (GPU) is a specialized hardware component designed primarily for rendering graphics, but modern GPUs are also used for general-purpose computing tasks through a framework known as General-Purpose GPU computing (GPGPU).</p>";
+                    break;
+                case 'Player 5':
+                    playerContent = "<p>I learned Memory management which includes Memory Allocation, Memory Addressing and Memory Protection.</p><p>Memory management <br>● Memory management is a critical aspect of computer systems that involves organizing and allocating memory resources efficiently to enable programs to execute smoothly. Here are some main points and descriptions regarding memory management: <br>-Memory Allocation: Memory allocation involves assigning portions of memory to programs or processes for their use. There are various allocation strategies, including contiguous allocation (where memory is divided into fixed-size partitions) and dynamic allocation (where memory is allocated and deallocated as needed). <br>Memory Addressing: Memory addressing refers to the process of assigning unique identifiers (addresses) to memory locations, allowing programs to access and manipulate data stored in memory. Different addressing modes, such as direct, indirect, and indexed addressing, provide flexibility in how programs access memory. <br>Memory Protection: Memory protection mechanisms prevent unauthorized access to memory locations, enhancing system security and stability. This includes techniques such as segmentation and paging, which partition memory to isolate processes and protect against memory-related errors. In summary, memory management encompasses a range of techniques and processes aimed at efficiently allocating, protecting, and releasing memory resources to support the execution of programs in computer systems. These practices are essential for optimizing system performance, ensuring stability, and enhancing security.</p>";
+                    break;
+                case 'Player 6':
+                    playerContent = "<p>I learned Core Components of an Operating System which includes kernel, driver, shell, terminal, System calls.</p><p>The sixth person: Core Components of an Operating System <br>●	Kernel: central component of an operating system It is a program that interacts with the hardware of a computer through device drivers. Also responsible for some memory management. Kernel remains in memory until the operating system is shut down. The Kernel also decides which processes should be allocated to processors to be executed and which ones should stay in memory. In essence it's responsible for managing all your resources. <br>●	Drivers: device drivers are programs within the kernel that allows for communication between the OS software and the computer's hardware by telling it how to function. When the system starts up it runs the bios which stands for Basic input and output system. <br>●	Shell: the shell provides a way for users to interact with the operating system. Essentially it is an interpreter of commands that are used to communicate with the system. Terminal: The terminal is the Text based user interface which helps the user communicate with the shell. The terminal and the shell work together to make the user's experience easier when speaking to the operating system. Used to communicate to the shell. <br>●	System calls: A system call is when a system wants to access hardware resources like storage or ram so it sends a request to the kernel. The kernel accesses the requested hardware and gives a response. </p>";
+                    break;
+                default:
+                    playerContent = "<p>Player information goes here...</p>";
+                    break;
+            }
+
+            document.getElementById("playerInfo").innerHTML = playerContent;
+        }
+    
+        function closeModal() {
+            document.getElementById("playerModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
